@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services - RAD GYM</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#0066CC',
+secondary: '#1E293B'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+.nav-item {
+position: relative;
+}
+.nav-item::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -2px;
+left: 0;
+background-color: #0066CC;
+transition: width 0.3s;
+}
+.nav-item:hover::after {
+width: 100%;
+}
+</style>
+</head>
+<body class="font-['Inter']">
+<header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+<div class="container mx-auto px-6 py-4">
+<nav class="flex items-center justify-between">
+<a href="https://readdy.ai/home/619648eb-65ba-4a34-b2f9-4ed382baf9ac/b050e2fb-0642-45fd-96b8-9fd2f29e7fc2" data-readdy="true" class="text-3xl font-['Pacifico'] text-primary">logo</a>
+<div class="hidden md:flex items-center space-x-8">
+<a href="https://readdy.ai/home/619648eb-65ba-4a34-b2f9-4ed382baf9ac/b050e2fb-0642-45fd-96b8-9fd2f29e7fc2" data-readdy="true" class="nav-item text-secondary hover:text-primary">Home</a>
+<a href="#" class="nav-item text-primary">Services</a>
+<a href="https://readdy.ai/home/619648eb-65ba-4a34-b2f9-4ed382baf9ac/53b535ce-d1b8-44bd-bbdd-159526aa892b" data-readdy="true" class="nav-item text-secondary hover:text-primary">Facilities</a>
+<a href="#" class="nav-item text-secondary hover:text-primary">Accessibility</a>
+<a href="#" class="nav-item text-secondary hover:text-primary">Contact</a>
+<button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap cursor-pointer">Join Now</button>
+</div>
+<button class="md:hidden w-10 h-10 flex items-center justify-center cursor-pointer" id="mobileMenuBtn">
+<i class="ri-menu-line text-2xl"></i>
+</button>
+</nav>
+</div>
+</header>
+<div class="mobile-menu hidden fixed top-16 left-0 right-0 bg-white shadow-lg z-40 md:hidden" id="mobileMenu">
+<div class="container mx-auto px-6 py-4">
+<div class="flex flex-col space-y-4">
+<a href="https://readdy.ai/home/619648eb-65ba-4a34-b2f9-4ed382baf9ac/b050e2fb-0642-45fd-96b8-9fd2f29e7fc2" data-readdy="true" class="text-secondary hover:text-primary">Home</a>
+<a href="#" class="text-primary">Services</a>
+<a href="https://readdy.ai/home/619648eb-65ba-4a34-b2f9-4ed382baf9ac/53b535ce-d1b8-44bd-bbdd-159526aa892b" data-readdy="true" class="text-secondary hover:text-primary">Facilities</a>
+<a href="#" class="text-secondary hover:text-primary">Accessibility</a>
+<a href="#" class="text-secondary hover:text-primary">Contact</a>
+<button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap w-full cursor-pointer">Join Now</button>
+</div>
+</div>
+</div>
+<main class="mt-16">
+<section class="relative h-[400px] bg-cover bg-center" style="background-image: url('https://public.readdy.ai/ai/img_res/5c57da8b0a984f43371517772ff0a528.jpg')">
+<div class="absolute inset-0 bg-gradient-to-r from-secondary/90 to-secondary/70"></div>
+<div class="container mx-auto px-6 h-full flex items-center">
+<div class="max-w-2xl text-white relative">
+<h1 class="text-5xl font-bold mb-6">Our Services & Programs</h1>
+<p class="text-xl mb-8">Transform your fitness journey with our comprehensive range of services designed for every goal and fitness level.</p>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold mb-16 text-center">Membership Plans</h2>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white p-8 rounded shadow-sm hover:shadow-md transition-shadow">
+<div class="text-center mb-8">
+<h3 class="text-2xl font-bold mb-2">Basic Plan</h3>
+<div class="text-4xl font-bold text-primary mb-2">$49<span class="text-lg text-gray-600">/month</span></div>
+<p class="text-gray-600">Perfect for beginners</p>
+</div>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>24/7 Gym Access</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Basic Equipment Usage</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Locker Room Access</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Fitness Assessment</li>
+</ul>
+<button class="w-full bg-primary text-white px-6 py-3 !rounded-button hover:bg-primary/90 transition-colors cursor-pointer">Join Now</button>
+</div>
+<div class="bg-white p-8 rounded shadow-sm hover:shadow-md transition-shadow relative transform scale-105">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm">Most Popular</div>
+<div class="text-center mb-8">
+<h3 class="text-2xl font-bold mb-2">Premium Plan</h3>
+<div class="text-4xl font-bold text-primary mb-2">$79<span class="text-lg text-gray-600">/month</span></div>
+<p class="text-gray-600">For dedicated fitness enthusiasts</p>
+</div>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>All Basic Plan Features</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Group Classes Access</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Personal Training Session</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Nutrition Consultation</li>
+</ul>
+<button class="w-full bg-primary text-white px-6 py-3 !rounded-button hover:bg-primary/90 transition-colors cursor-pointer">Join Now</button>
+</div>
+<div class="bg-white p-8 rounded shadow-sm hover:shadow-md transition-shadow">
+<div class="text-center mb-8">
+<h3 class="text-2xl font-bold mb-2">Elite Plan</h3>
+<div class="text-4xl font-bold text-primary mb-2">$129<span class="text-lg text-gray-600">/month</span></div>
+<p class="text-gray-600">Ultimate fitness experience</p>
+</div>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>All Premium Plan Features</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Unlimited PT Sessions</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Recovery Suite Access</li>
+<li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>VIP Locker Service</li>
+</ul>
+<button class="w-full bg-primary text-white px-6 py-3 !rounded-button hover:bg-primary/90 transition-colors cursor-pointer">Join Now</button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold mb-16 text-center">Personal Training</h2>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white p-6 rounded shadow-sm">
+<img src="https://public.readdy.ai/ai/img_res/f25f491e0fdfd6e1ba604a3986752566.jpg" alt="Trainer" class="w-full h-48 object-cover rounded mb-6">
+<h3 class="text-xl font-bold mb-2">Sarah Wilson</h3>
+<p class="text-gray-600 mb-4">Specializes in strength training and weight loss</p>
+<div class="space-y-2 mb-6">
+<div class="flex items-center justify-between">
+<span>1 Session</span>
+<span class="font-semibold">$75</span>
+</div>
+<div class="flex items-center justify-between">
+<span>5 Sessions</span>
+<span class="font-semibold">$350</span>
+</div>
+<div class="flex items-center justify-between">
+<span>10 Sessions</span>
+<span class="font-semibold">$650</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors cursor-pointer">Book Session</button>
+</div>
+<div class="bg-white p-6 rounded shadow-sm">
+<img src="https://public.readdy.ai/ai/img_res/b4c452516b7f767f2b2195655362de53.jpg" alt="Trainer" class="w-full h-48 object-cover rounded mb-6">
+<h3 class="text-xl font-bold mb-2">Michael Chen</h3>
+<p class="text-gray-600 mb-4">Expert in functional training and rehabilitation</p>
+<div class="space-y-2 mb-6">
+<div class="flex items-center justify-between">
+<span>1 Session</span>
+<span class="font-semibold">$75</span>
+</div>
+<div class="flex items-center justify-between">
+<span>5 Sessions</span>
+<span class="font-semibold">$350</span>
+</div>
+<div class="flex items-center justify-between">
+<span>10 Sessions</span>
+<span class="font-semibold">$650</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors cursor-pointer">Book Session</button>
+</div>
+<div class="bg-white p-6 rounded shadow-sm">
+<img src="https://public.readdy.ai/ai/img_res/ad888d86c6e88ca5efb00cd816ee3977.jpg" alt="Trainer" class="w-full h-48 object-cover rounded mb-6">
+<h3 class="text-xl font-bold mb-2">David Thompson</h3>
+<p class="text-gray-600 mb-4">Specialized in HIIT and athletic performance</p>
+<div class="space-y-2 mb-6">
+<div class="flex items-center justify-between">
+<span>1 Session</span>
+<span class="font-semibold">$75</span>
+</div>
+<div class="flex items-center justify-between">
+<span>5 Sessions</span>
+<span class="font-semibold">$350</span>
+</div>
+<div class="flex items-center justify-between">
+<span>10 Sessions</span>
+<span class="font-semibold">$650</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors cursor-pointer">Book Session</button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold mb-16 text-center">Group Classes</h2>
+<div class="overflow-x-auto">
+<table class="w-full bg-white rounded shadow-sm">
+<thead>
+<tr class="bg-gray-50">
+<th class="px-6 py-4 text-left">Class</th>
+<th class="px-6 py-4 text-left">Instructor</th>
+<th class="px-6 py-4 text-left">Time</th>
+<th class="px-6 py-4 text-left">Duration</th>
+<th class="px-6 py-4 text-left">Capacity</th>
+<th class="px-6 py-4 text-left">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-t">
+<td class="px-6 py-4">HIIT Workout</td>
+<td class="px-6 py-4">Sarah Wilson</td>
+<td class="px-6 py-4">6:00 AM</td>
+<td class="px-6 py-4">45 min</td>
+<td class="px-6 py-4">15/20</td>
+<td class="px-6 py-4">
+<button class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-primary/90 transition-colors text-sm cursor-pointer">Book Now</button>
+</td>
+</tr>
+<tr class="border-t">
+<td class="px-6 py-4">Yoga Flow</td>
+<td class="px-6 py-4">Emma Davis</td>
+<td class="px-6 py-4">8:00 AM</td>
+<td class="px-6 py-4">60 min</td>
+<td class="px-6 py-4">12/15</td>
+<td class="px-6 py-4">
+<button class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-primary/90 transition-colors text-sm cursor-pointer">Book Now</button>
+</td>
+</tr>
+<tr class="border-t">
+<td class="px-6 py-4">Spin Class</td>
+<td class="px-6 py-4">Michael Chen</td>
+<td class="px-6 py-4">5:30 PM</td>
+<td class="px-6 py-4">45 min</td>
+<td class="px-6 py-4">18/20</td>
+<td class="px-6 py-4">
+<button class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-primary/90 transition-colors text-sm cursor-pointer">Book Now</button>
+</td>
+</tr>
+<tr class="border-t">
+<td class="px-6 py-4">Core Strength</td>
+<td class="px-6 py-4">David Thompson</td>
+<td class="px-6 py-4">6:30 PM</td>
+<td class="px-6 py-4">30 min</td>
+<td class="px-6 py-4">10/15</td>
+<td class="px-6 py-4">
+<button class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-primary/90 transition-colors text-sm cursor-pointer">Book Now</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section class="py-20">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold mb-16 text-center">Specialized Programs</h2>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="bg-white p-8 rounded shadow-sm">
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+<i class="ri-heart-pulse-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold">Rehabilitation Program</h3>
+</div>
+<p class="text-gray-600 mb-6">Personalized recovery programs designed by certified physiotherapists and trainers for post-injury rehabilitation.</p>
+<div class="mb-6">
+<div class="flex items-center justify-between mb-2">
+<span>Duration</span>
+<span>12 weeks</span>
+</div>
+<div class="flex items-center justify-between mb-2">
+<span>Sessions</span>
+<span>3x per week</span>
+</div>
+<div class="flex items-center justify-between">
+<span>Price</span>
+<span class="font-bold">$899</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white px-6 py-3 !rounded-button hover:bg-primary/90 transition-colors cursor-pointer">Learn More</button>
+</div>
+<div class="bg-white p-8 rounded shadow-sm">
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+<i class="ri-user-star-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold">Senior Fitness</h3>
+</div>
+<p class="text-gray-600 mb-6">Low-impact exercises and strength training programs specifically designed for seniors to maintain mobility and independence.</p>
+<div class="mb-6">
+<div class="flex items-center justify-between mb-2">
+<span>Duration</span>
+<span>Ongoing</span>
+</div>
+<div class="flex items-center justify-between mb-2">
+<span>Sessions</span>
+<span>2x per week</span>
+</div>
+<div class="flex items-center justify-between">
+<span>Price</span>
+<span class="font-bold">$69/month</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white px-6 py-3 !rounded-button hover:bg-primary/90 transition-colors cursor-pointer">Learn More</button>
+</div>
+<div class="bg-white p-8 rounded shadow-sm">
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+<i class="ri-run-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold">Youth Training</h3>
+</div>
+<p class="text-gray-600 mb-6">Age-appropriate fitness programs focusing on proper form, coordination, and athletic development for young athletes.</p>
+<div class="mb-6">
+<div class="flex items-center justify-between mb-2">
+<span>Duration</span>
+<span>8 weeks</span>
+</div>
+<div class="flex items-center justify-between mb-2">
+<span>Sessions</span>
+<span>2x per week</span>
+</div>
+<div class="flex items-center justify-between">
+<span>Price</span>
+<span class="font-bold">$299</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white px-6 py-3 !rounded-button hover:bg-primary/90 transition-colors cursor-pointer">Learn More</button>
+</div>
+<div class="bg-white p-8 rounded shadow-sm">
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+<i class="ri-boxing-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold">Sport-Specific Training</h3>
+</div>
+<p class="text-gray-600 mb-6">Customized training programs designed to enhance performance in specific sports through targeted exercises and drills.</p>
+<div class="mb-6">
+<div class="flex items-center justify-between mb-2">
+<span>Duration</span>
+<span>12 weeks</span>
+</div>
+<div class="flex items-center justify-between mb-2">
+<span>Sessions</span>
+<span>3x per week</span>
+</div>
+<div class="flex items-center justify-between">
+<span>Price</span>
+<span class="font-bold">$799</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white px-6 py-3 !rounded-button hover:bg-primary/90 transition-colors cursor-pointer">Learn More</button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-primary text-white">
+<div class="container mx-auto px-6 text-center">
+<h2 class="text-3xl font-bold mb-8">Ready to Start Your Fitness Journey?</h2>
+<p class="text-xl mb-8 max-w-2xl mx-auto">Join RAD GYM today and experience the difference our professional trainers and state-of-the-art facilities can make in your fitness journey.</p>
+<div class="flex flex-wrap justify-center gap-4">
+<button class="bg-white text-primary px-8 py-3 !rounded-button hover:bg-gray-100 transition-colors text-lg font-medium cursor-pointer">Join Now</button>
+<button class="border-2 border-white text-white px-8 py-3 !rounded-button hover:bg-white/10 transition-colors text-lg font-medium cursor-pointer">Book a Tour</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-secondary text-white py-12">
+<div class="container mx-auto px-6">
+<div class="grid md:grid-cols-3 gap-12">
+<div>
+<a href="https://readdy.ai/home/619648eb-65ba-4a34-b2f9-4ed382baf9ac/b050e2fb-0642-45fd-96b8-9fd2f29e7fc2" data-readdy="true" class="text-3xl font-['Pacifico'] text-white mb-6 block">logo</a>
+<p class="text-gray-400">Your inclusive fitness destination in Cowra, NSW. Open 24/7 for everyone's convenience.</p>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="https://readdy.ai/home/619648eb-65ba-4a34-b2f9-4ed382baf9ac/b050e2fb-0642-45fd-96b8-9fd2f29e7fc2" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+<li><a href="https://readdy.ai/home/619648eb-65ba-4a34-b2f9-4ed382baf9ac/53b535ce-d1b8-44bd-bbdd-159526aa892b" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Facilities</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Accessibility</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-6">Connect With Us</h3>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-primary transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-primary transition-colors">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-primary transition-colors">
+<i class="ri-twitter-x-line"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 mt-12 pt-6 text-center text-gray-400">
+<p>&copy; 2025 RAD GYM. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+mobileMenuBtn.addEventListener('click', () => {
+mobileMenu.classList.toggle('hidden');
+const icon = mobileMenuBtn.querySelector('i');
+icon.classList.toggle('ri-menu-line');
+icon.classList.toggle('ri-close-line');
+});
+document.querySelectorAll('button').forEach(button => {
+button.addEventListener('click', (e) => {
+const modal = document.createElement('div');
+modal.className = 'fixed inset-0 bg-black/50 flex items-center justify-center z-50';
+modal.innerHTML = `
+<div class="bg-white p-8 rounded max-w-md w-full mx-4">
+<h3 class="text-xl font-bold mb-4">Thank you for your interest!</h3>
+<p class="text-gray-600 mb-6">Our team will contact you shortly to discuss your fitness goals and help you get started.</p>
+<button class="w-full bg-primary text-white px-6 py-3 !rounded-button hover:bg-primary/90 transition-colors">Close</button>
+</div>
+`;
+document.body.appendChild(modal);
+modal.querySelector('button').addEventListener('click', () => {
+modal.remove();
+});
+});
+});
+</script>
+</body>
+</html>

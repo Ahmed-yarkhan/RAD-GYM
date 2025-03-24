@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAD GYM - Facilities</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#0066CC',
+secondary: '#1E293B'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+.nav-item {
+position: relative;
+}
+.nav-item::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -2px;
+left: 0;
+background-color: #0066CC;
+transition: width 0.3s;
+}
+.nav-item:hover::after {
+width: 100%;
+}
+.virtual-tour-container {
+position: relative;
+width: 100%;
+height: 600px;
+overflow: hidden;
+}
+.virtual-tour-controls {
+position: absolute;
+bottom: 20px;
+left: 50%;
+transform: translateX(-50%);
+z-index: 10;
+}
+.equipment-status {
+position: absolute;
+top: 10px;
+right: 10px;
+padding: 4px 8px;
+border-radius: 9999px;
+font-size: 12px;
+}
+.equipment-status.available {
+background-color: #22C55E;
+color: white;
+}
+.equipment-status.in-use {
+background-color: #EF4444;
+color: white;
+}
+</style>
+</head>
+<body class="font-['Inter']">
+<header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+<div class="container mx-auto px-6 py-4">
+<nav class="flex items-center justify-between">
+<a href="https://readdy.ai/home/619648eb-65ba-4a34-b2f9-4ed382baf9ac/b050e2fb-0642-45fd-96b8-9fd2f29e7fc2" data-readdy="true" class="text-3xl font-['Pacifico'] text-primary">logo</a>
+<div class="hidden md:flex items-center space-x-8">
+<a href="https://readdy.ai/home/619648eb-65ba-4a34-b2f9-4ed382baf9ac/b050e2fb-0642-45fd-96b8-9fd2f29e7fc2" data-readdy="true" class="nav-item text-secondary hover:text-primary">Home</a>
+<a href="https://readdy.ai/home/619648eb-65ba-4a34-b2f9-4ed382baf9ac/1c63671b-993a-403f-87bb-5f9285635f51" data-readdy="true" class="nav-item text-secondary hover:text-primary">Services</a>
+<a href="#" class="nav-item text-primary font-medium">Facilities</a>
+<a href="#" class="nav-item text-secondary hover:text-primary">Accessibility</a>
+<a href="#" class="nav-item text-secondary hover:text-primary">Contact</a>
+<button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap cursor-pointer">Join Now</button>
+</div>
+<button class="md:hidden w-10 h-10 flex items-center justify-center cursor-pointer" id="mobileMenuBtn">
+<i class="ri-menu-line text-2xl"></i>
+</button>
+</nav>
+</div>
+</header>
+<div class="mobile-menu hidden fixed top-16 left-0 right-0 bg-white shadow-lg z-40 md:hidden" id="mobileMenu">
+<div class="container mx-auto px-6 py-4">
+<div class="flex flex-col space-y-4">
+<a href="https://readdy.ai/home/619648eb-65ba-4a34-b2f9-4ed382baf9ac/b050e2fb-0642-45fd-96b8-9fd2f29e7fc2" data-readdy="true" class="text-secondary hover:text-primary">Home</a>
+<a href="https://readdy.ai/home/619648eb-65ba-4a34-b2f9-4ed382baf9ac/1c63671b-993a-403f-87bb-5f9285635f51" data-readdy="true" class="text-secondary hover:text-primary">Services</a>
+<a href="#" class="text-primary font-medium">Facilities</a>
+<a href="#" class="text-secondary hover:text-primary">Accessibility</a>
+<a href="#" class="text-secondary hover:text-primary">Contact</a>
+<button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap w-full cursor-pointer">Join Now</button>
+</div>
+</div>
+</div>
+<main class="mt-16">
+<section class="relative h-[400px] bg-cover bg-center" style="background-image: url('https://public.readdy.ai/ai/img_res/2acba824da2515f6ac19b31a853da6cc.jpg')">
+<div class="absolute inset-0 bg-gradient-to-r from-secondary/90 to-secondary/50"></div>
+<div class="container mx-auto px-6 h-full flex items-center">
+<div class="max-w-2xl text-white relative">
+<h1 class="text-5xl font-bold mb-6">World-Class Facilities</h1>
+<p class="text-xl">Experience fitness excellence with our state-of-the-art equipment and premium amenities designed for your ultimate workout journey.</p>
+</div>
+</div>
+</section>
+<section class="py-20">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold text-center mb-16">Take a Virtual Tour</h2>
+<div class="grid md:grid-cols-3 gap-8 mb-16">
+<div class="bg-white p-6 rounded shadow-sm">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-map-2-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Interactive Map</h3>
+<p class="text-gray-600">Navigate through our facility using our detailed interactive floor plan</p>
+</div>
+<div class="bg-white p-6 rounded shadow-sm">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-360-view-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">360° Views</h3>
+<p class="text-gray-600">Experience our spaces in immersive 360-degree panoramas</p>
+</div>
+<div class="bg-white p-6 rounded shadow-sm">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-information-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Equipment Info</h3>
+<p class="text-gray-600">Get detailed information about our equipment as you explore</p>
+</div>
+</div>
+<div class="virtual-tour-container bg-gray-100 rounded-lg overflow-hidden">
+<div class="relative h-full">
+<img src="https://public.readdy.ai/ai/img_res/38da78e7fae6ab1dc2193ce20b502af5.jpg" alt="Gym Layout" class="w-full h-full object-cover">
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full shadow-lg">
+<div class="flex items-center space-x-2">
+<i class="ri-map-pin-2-fill text-primary"></i>
+<span class="text-sm font-medium">Main Floor</span>
+</div>
+</div>
+<div class="virtual-tour-controls flex space-x-4">
+<button class="bg-white/90 backdrop-blur px-4 py-2 !rounded-button shadow-lg hover:bg-white transition-colors cursor-pointer flex items-center">
+<i class="ri-zoom-in-line mr-2"></i>
+Zoom In
+</button>
+<button class="bg-white/90 backdrop-blur px-4 py-2 !rounded-button shadow-lg hover:bg-white transition-colors cursor-pointer flex items-center">
+<i class="ri-zoom-out-line mr-2"></i>
+Zoom Out
+</button>
+<button class="bg-white/90 backdrop-blur px-4 py-2 !rounded-button shadow-lg hover:bg-white transition-colors cursor-pointer flex items-center">
+<i class="ri-fullscreen-line mr-2"></i>
+Full Screen
+</button>
+</div>
+<div class="absolute top-4 right-4 flex space-x-2">
+<button class="bg-white/90 backdrop-blur w-10 h-10 rounded-full shadow-lg hover:bg-white transition-colors cursor-pointer flex items-center justify-center">
+<i class="ri-camera-line text-primary"></i>
+</button>
+<button class="bg-white/90 backdrop-blur w-10 h-10 rounded-full shadow-lg hover:bg-white transition-colors cursor-pointer flex items-center justify-center">
+<i class="ri-compass-3-line text-primary"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold text-center mb-16">Our Facilities</h2>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="bg-white rounded shadow-sm overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/ea4e0e8f750106b21bc675b4a0ed0c96.jpg" alt="Cardio Zone" class="w-full h-64 object-cover">
+<div class="p-8">
+<h3 class="text-2xl font-bold mb-4">Cardio Zone</h3>
+<ul class="space-y-3 mb-6">
+<li class="flex items-center">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>20 Latest Model Treadmills</span>
+</li>
+<li class="flex items-center">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>15 Elliptical Machines</span>
+</li>
+<li class="flex items-center">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>12 Stationary Bikes</span>
+</li>
+<li class="flex items-center">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>8 Stair Masters</span>
+</li>
+</ul>
+<div class="flex items-center justify-between">
+<span class="text-sm text-gray-600">Peak Hours: 6-8 AM, 5-7 PM</span>
+<div class="flex items-center">
+<span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span>
+<span class="text-sm text-gray-600">Currently Available</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded shadow-sm overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/1f8f5e1249071e0bf3bcab990165aeb2.jpg" alt="Strength Training Area" class="w-full h-64 object-cover">
+<div class="p-8">
+<h3 class="text-2xl font-bold mb-4">Strength Training Area</h3>
+<ul class="space-y-3 mb-6">
+<li class="flex items-center">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Complete Free Weight Section</span>
+</li>
+<li class="flex items-center">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>10 Power Racks</span>
+</li>
+<li class="flex items-center">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Smith Machines</span>
+</li>
+<li class="flex items-center">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Cable Machines</span>
+</li>
+</ul>
+<div class="flex items-center justify-between">
+<span class="text-sm text-gray-600">Peak Hours: 4-8 PM</span>
+<div class="flex items-center">
+<span class="w-2 h-2 rounded-full bg-yellow-500 mr-2"></span>
+<span class="text-sm text-gray-600">Moderately Busy</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded shadow-sm overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/2f27a8b4c2af0431aba22471bdb30e53.jpg" alt="Functional Fitness Space" class="w-full h-64 object-cover">
+<div class="p-8">
+<h3 class="text-2xl font-bold mb-4">Functional Fitness Space</h3>
+<ul class="space-y-3 mb-6">
+<li class="flex items-center">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Open Training Area</span>
+</li>
+<li class="flex items-center">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Kettlebells & Medicine Balls</span>
+</li>
+<li class="flex items-center">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>TRX Suspension Training</span>
+</li>
+<li class="flex items-center">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Battle Ropes & Plyo Boxes</span>
+</li>
+</ul>
+<div class="flex items-center justify-between">
+<span class="text-sm text-gray-600">Class Schedule Available</span>
+<button class="text-primary hover:text-primary/80 transition-colors font-medium cursor-pointer">View Schedule</button>
+</div>
+</div>
+</div>
+<div class="bg-white rounded shadow-sm overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/9f867f255e0bbd63f3b00c939ff217eb.jpg" alt="Recovery Area" class="w-full h-64 object-cover">
+<div class="p-8">
+<h3 class="text-2xl font-bold mb-4">Recovery Area</h3>
+<ul class="space-y-3 mb-6">
+<li class="flex items-center">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Massage Chairs</span>
+</li>
+<li class="flex items-center">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Stretching Zone</span>
+</li>
+<li class="flex items-center">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Foam Rolling Equipment</span>
+</li>
+<li class="flex items-center">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Recovery Tools</span>
+</li>
+</ul>
+<div class="flex items-center justify-between">
+<span class="text-sm text-gray-600">Massage Chair Booking Required</span>
+<button class="text-primary hover:text-primary/80 transition-colors font-medium cursor-pointer">Book Now</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold text-center mb-16">Equipment Availability</h2>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white p-6 rounded shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-semibold">Cardio Equipment</h3>
+<div class="flex items-center">
+<span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span>
+<span class="text-sm text-gray-600">85% Available</span>
+</div>
+</div>
+<div id="cardioChart" class="h-64"></div>
+</div>
+<div class="bg-white p-6 rounded shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-semibold">Strength Equipment</h3>
+<div class="flex items-center">
+<span class="w-2 h-2 rounded-full bg-yellow-500 mr-2"></span>
+<span class="text-sm text-gray-600">65% Available</span>
+</div>
+</div>
+<div id="strengthChart" class="h-64"></div>
+</div>
+<div class="bg-white p-6 rounded shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-semibold">Peak Hours</h3>
+<div class="flex items-center">
+<i class="ri-information-line text-primary mr-2"></i>
+<span class="text-sm text-gray-600">Today's Forecast</span>
+</div>
+</div>
+<div id="peakHoursChart" class="h-64"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-primary text-white">
+<div class="container mx-auto px-6 text-center">
+<h2 class="text-3xl font-bold mb-8">Experience Our Facilities Firsthand</h2>
+<p class="text-xl mb-8 max-w-2xl mx-auto">Book a tour with our team and discover how our premium facilities can help you achieve your fitness goals.</p>
+<button class="bg-white text-primary px-8 py-3 !rounded-button hover:bg-gray-100 transition-colors text-lg font-medium cursor-pointer">Schedule a Tour</button>
+</div>
+</section>
+</main>
+<footer class="bg-secondary text-white py-12">
+<div class="container mx-auto px-6">
+<div class="grid md:grid-cols-3 gap-12">
+<div>
+<a href="https://readdy.ai/home/619648eb-65ba-4a34-b2f9-4ed382baf9ac/b050e2fb-0642-45fd-96b8-9fd2f29e7fc2" data-readdy="true" class="text-3xl font-['Pacifico'] text-white mb-6 block">logo</a>
+<p class="text-gray-400">Your inclusive fitness destination in Cowra, NSW. Open 24/7 for everyone's convenience.</p>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="https://readdy.ai/home/619648eb-65ba-4a34-b2f9-4ed382baf9ac/b050e2fb-0642-45fd-96b8-9fd2f29e7fc2" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="https://readdy.ai/home/619648eb-65ba-4a34-b2f9-4ed382baf9ac/1c63671b-993a-403f-87bb-5f9285635f51" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Facilities</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Accessibility</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-6">Connect With Us</h3>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-primary transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-primary transition-colors">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-primary transition-colors">
+<i class="ri-twitter-x-line"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 mt-12 pt-6 text-center text-gray-400">
+<p>&copy; 2025 RAD GYM. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+mobileMenuBtn.addEventListener('click', () => {
+mobileMenu.classList.toggle('hidden');
+const icon = mobileMenuBtn.querySelector('i');
+icon.classList.toggle('ri-menu-line');
+icon.classList.toggle('ri-close-line');
+});
+document.querySelectorAll('button').forEach(button => {
+button.addEventListener('click', function() {
+if (this.textContent.includes('Tour') || this.textContent.includes('Book')) {
+const modal = document.createElement('div');
+modal.className = 'fixed inset-0 bg-black/50 flex items-center justify-center z-50';
+modal.innerHTML = `
+<div class="bg-white p-8 rounded max-w-md w-full mx-4">
+<h3 class="text-2xl font-bold mb-4">Thank you for your interest!</h3>
+<p class="text-gray-600 mb-6">Our team will contact you shortly to schedule your visit.</p>
+<button class="w-full bg-primary text-white px-6 py-3 !rounded-button hover:bg-primary/90 transition-colors">Close</button>
+</div>
+`;
+document.body.appendChild(modal);
+modal.querySelector('button').onclick = () => modal.remove();
+}
+});
+});
+const cardioChart = echarts.init(document.getElementById('cardioChart'));
+const strengthChart = echarts.init(document.getElementById('strengthChart'));
+const peakHoursChart = echarts.init(document.getElementById('peakHoursChart'));
+cardioChart.setOption({
+animation: false,
+tooltip: {
+trigger: 'item'
+},
+series: [{
+type: 'pie',
+radius: ['60%', '80%'],
+data: [
+{value: 85, name: 'Available', itemStyle: {color: 'rgba(87, 181, 231, 1)'}},
+{value: 15, name: 'In Use', itemStyle: {color: 'rgba(141, 211, 199, 1)'}}
+],
+label: {
+show: false
+}
+}]
+});
+strengthChart.setOption({
+animation: false,
+tooltip: {
+trigger: 'item'
+},
+series: [{
+type: 'pie',
+radius: ['60%', '80%'],
+data: [
+{value: 65, name: 'Available', itemStyle: {color: 'rgba(251, 191, 114, 1)'}},
+{value: 35, name: 'In Use', itemStyle: {color: 'rgba(252, 141, 98, 1)'}}
+],
+label: {
+show: false
+}
+}]
+});
+peakHoursChart.setOption({
+animation: false,
+tooltip: {
+trigger: 'axis'
+},
+xAxis: {
+type: 'category',
+data: ['6am', '8am', '10am', '12pm', '2pm', '4pm', '6pm', '8pm', '10pm'],
+axisLine: {
+lineStyle: {
+color: '#1f2937'
+}
+}
+},
+yAxis: {
+type: 'value',
+axisLine: {
+lineStyle: {
+color: '#1f2937'
+}
+}
+},
+series: [{
+data: [30, 70, 40, 50, 35, 60, 90, 80, 40],
+type: 'line',
+smooth: true,
+itemStyle: {
+color: 'rgba(87, 181, 231, 1)'
+},
+areaStyle: {
+color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+offset: 0,
+color: 'rgba(87, 181, 231, 0.3)'
+}, {
+offset: 1,
+color: 'rgba(87, 181, 231, 0.1)'
+}])
+}
+}]
+});
+window.addEventListener('resize', () => {
+cardioChart.resize();
+strengthChart.resize();
+peakHoursChart.resize();
+});
+</script>
+</body>
+</html>
